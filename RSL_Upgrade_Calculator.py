@@ -2,7 +2,7 @@
 to upgrage a champion to 6 star based on how many food champions 
 at each level are current on an account.
 
-This calculator assumes that the desired champion to upgrade to 6 star is already at 5 star."""
+This calculator assumes that the desired champion to upgrade to 6 star is already at 5 star and level 50."""
 
 "Input type validation function to ensure only integers are used as input."
 def input_is_integer(prompt):
@@ -27,23 +27,23 @@ six_star = five_star * needed_five_star  #Upgrade from 5 star to 6 star
 
 total_needed = 300
 
-"""Function to calculate the number of 2* food champions needed
+"""Function to calculate the number of 2 star food champions needed
 based on the user input of the number of food champions at each level"""
 def num_of_twos():
-    two_star_lvl_1 = input_is_integer('How many 2* champions will be fed? ')
+    two_star_lvl_1 = input_is_integer('How many 2 star champions will be fed? ')
     #two_star_lvl_30 = input_is_integer('How many two star champions are at level 20? ')
-    three_star_lvl_1 = input_is_integer('How many 3* champions will be fed? ')
+    three_star_lvl_1 = input_is_integer('How many 3 star champions will be fed? ')
     #three_star_lvl_30 = input_is_integer('How many three star champions are at level 30? ')
-    four_star_lvl_1 = input_is_integer('How many 4* champions will be fed? ')
+    four_star_lvl_1 = input_is_integer('How many 4 star champions will be fed? ')
     #four_star_lvl_30 = input_is_integer('How many four star champions are at level 40? ')
-    five_star_lvl_1 = input_is_integer('How many 5* champions will be fed? ')
+    five_star_lvl_1 = input_is_integer('How many 5 star champions will be fed? ')
     #five_star_lvl_30 = input_is_integer('How many five star champions are at level 50? ')
     twos_needed_for_six = total_needed - (two_star_lvl_1) - (three_star_lvl_1 * three_star) - (four_star_lvl_1 * four_star) - (five_star_lvl_1 * five_star)
     
     if twos_needed_for_six <= 0:
-        print('Congratulations! You have enough food to upgrade a champion to six star!')
+        print('Congratulations! You have enough food to upgrade a champion to 6 star!')
     else:
-        print(f'You need {twos_needed_for_six} more two star champions to make a six star champion.')
+        print(f'You need {twos_needed_for_six} more 2 star champions to make a 6 star champion.')
 
 print(' ')
 num_of_twos()     
