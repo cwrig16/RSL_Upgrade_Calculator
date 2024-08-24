@@ -31,13 +31,9 @@ total_needed = 300
 based on the user input of the number of food champions at each level"""
 def num_of_twos():
     two_star_lvl_1 = input_is_integer('How many 2 star champions will be fed? ')
-    #two_star_lvl_30 = input_is_integer('How many two star champions are at level 20? ')
     three_star_lvl_1 = input_is_integer('How many 3 star champions will be fed? ')
-    #three_star_lvl_30 = input_is_integer('How many three star champions are at level 30? ')
     four_star_lvl_1 = input_is_integer('How many 4 star champions will be fed? ')
-    #four_star_lvl_30 = input_is_integer('How many four star champions are at level 40? ')
     five_star_lvl_1 = input_is_integer('How many 5 star champions will be fed? ')
-    #five_star_lvl_30 = input_is_integer('How many five star champions are at level 50? ')
     twos_needed_for_six = total_needed - (two_star_lvl_1) - (three_star_lvl_1 * three_star) - (four_star_lvl_1 * four_star) - (five_star_lvl_1 * five_star)
     
     if twos_needed_for_six <= 0:
