@@ -37,13 +37,17 @@ def num_of_twos():
     four_star_lvl_1 = input_is_integer('How many 4 star champions will be fed? ')
     five_star_lvl_1 = input_is_integer('How many 5 star champions will be fed? ')
     twos_needed_for_six = total_needed - (two_star_lvl_1) - (three_star_lvl_1 * three_star) - (four_star_lvl_1 * four_star) - (five_star_lvl_1 * five_star)
-    
+
+    """Logic to determine how many 6 star champions 
+    can be made with the amount of food champions entered"""    
     if twos_needed_for_six <= 0:
-        num_of_upgrades = abs(twos_needed_for_six)/total_needed
-        if num_of_upgrades <= 1:
+        num_of_upgrades = abs(twos_needed_for_six)/total_needed  # Calculate now many 6 star champions can be made
+        if num_of_upgrades <= 1:  # If only one 6 star can be made with the given food
             print(f'Congratulations! You have enough food to upgrade a champion to 6 star!')
-        elif num_of_upgrades > 1:
-            print(f'Congratulations? You have enough food to upgrade {math.floor(num_of_upgrades)} champions to 6 star!')
+        elif num_of_upgrades > 1:  # If more than one 6 star can be made with given food
+            decimal_part, integer_part  = math.modf(num_of_upgrades)  # Seperate int from float into variables
+            twos_needed_for_next_six = round(decimal_part * total_needed)  #  Number of 2 star champions needed for addional 6 star upgrade
+            print(f'Congratulations? You have enough food to upgrade {int(integer_part)} champions to 6 star and need {twos_needed_for_next_six} more 2 star champions to make an additional 6 star champions!')
     else:
         print(f'You need {twos_needed_for_six} more 2 star champions to make a 6 star champion.')
 
