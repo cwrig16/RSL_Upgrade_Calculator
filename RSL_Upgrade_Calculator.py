@@ -4,6 +4,8 @@ at each level are current on an account.
 
 This calculator assumes that the desired champion to upgrade to 6 star is already at 5 star and level 50."""
 
+import math
+
 "Input type validation function to ensure only integers are used as input."
 def input_is_integer(prompt):
     while True:
@@ -37,7 +39,11 @@ def num_of_twos():
     twos_needed_for_six = total_needed - (two_star_lvl_1) - (three_star_lvl_1 * three_star) - (four_star_lvl_1 * four_star) - (five_star_lvl_1 * five_star)
     
     if twos_needed_for_six <= 0:
-        print('Congratulations! You have enough food to upgrade a champion to 6 star!')
+        num_of_upgrades = abs(twos_needed_for_six)/total_needed
+        if num_of_upgrades <= 1:
+            print(f'Congratulations! You have enough food to upgrade a champion to 6 star!')
+        elif num_of_upgrades > 1:
+            print(f'Congratulations? You have enough food to upgrade {math.floor(num_of_upgrades)} champions to 6 star!')
     else:
         print(f'You need {twos_needed_for_six} more 2 star champions to make a 6 star champion.')
 
